@@ -1,0 +1,2 @@
+class Carmodel < ApplicationRecord
+end
