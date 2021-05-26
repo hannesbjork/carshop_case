@@ -16,6 +16,11 @@
     <%= form.select :user_id, User.all.collect { |x| [x.name, x.id]}, {:include_blank => "Please Select"} %>
   </div>
   
+  <div class="field">
+    <%= form.label :Authentication_level %>
+    <%= form.select :auth_level, [["General", 1], ["Admin", 2]], {:include_blank => "Please Select"} %>
+  </div>
+  
   <div class="actions">
     <%= form.submit %>
   </div>

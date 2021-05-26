@@ -3,12 +3,12 @@
 
 	<h1>Users</h1>
 
-	<table>
+	<table class="table">
 	  <thead>
 		<tr>
-		  <th>Name</th>
-		  <th>Email</th>
-		  <th>Sold for</th>
+		  <th scope="col">Name</th>
+		  <th scope="col">Email</th>
+		  <th scope="col">Sold for</th>
 		  <th colspan="3"></th>
 		</tr>
 	  </thead>
@@ -16,13 +16,15 @@
 	  <tbody>
 		<% @users.each do |user| %>
 		  <tr>
-		  	<td><%= user.name %></td>
+		  	<td scope="row"><%= user.name %></td>
 		    <td><%= user.email %></td>
 		    <td><%= user.sold_for %></td>
 			
-		    <td><%= link_to 'Show', user %></td>
-		    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-		    <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+			<% if logged_in? %>
+		    	<td><%= link_to 'Show', user %></td>
+		    	<td><%= link_to 'Edit', edit_user_path(user) %></td>
+		    	<td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		    <% end %>
 		  </tr>
 		<% end %>
 	  </tbody>
@@ -31,7 +33,7 @@
 	
 	<br>
 	
-	<p>Sold for in total <%= @sold_for_total %>kr</p>
+	<p><em>Sold for in total <%= @sold_for_total %>kr</em></p>
 
 	<br>
 

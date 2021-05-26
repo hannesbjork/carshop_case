@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  resources :posts
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  
+
   root to: 'pages#home'
   
   resources :users
@@ -10,8 +8,9 @@ Rails.application.routes.draw do
   resources :employees
   
   
-  resources :login
-  
-  resources :sessions, only: [:create]
+  get '/login', to: 'sessions#login'
+  post '/login', to: 'sessions#create'
+  post '/logout', to: 'sessions#destroy'
+  get '/logout', to: 'sessions#destroy'
 
 end

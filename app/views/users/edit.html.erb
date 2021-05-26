@@ -1,8 +1,11 @@
 <div class="container">
 	<h1>Editing User</h1>
 
-	<%= render 'form', user: @user %>
-
+	<% if logged_in? %>
+		<%= render 'form', user: @user %>
+	<% else %>
+	<h3>You need the right authentication to view this page</h3>
+<% end %>
 	<%= link_to 'Show', @user %> |
 	<%= link_to 'Back', users_path %>
 </div>

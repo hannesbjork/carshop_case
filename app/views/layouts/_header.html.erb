@@ -1,18 +1,37 @@
-<!DOCTYPE html>
-<html>
-	<div class="container">
-	  	<header>
-		  	<thead>
-			<tr>
-			  <th><%= link_to 'Home', root_path %></th>
-			  <th><%= link_to 'Users', users_path %></th>
-			  <th><%= link_to 'Car models', carmodels_path %></th>
-			  <th><%= link_to 'Employees', employees_path %></th>
-			  <th><%= link_to 'Sales', sales_path %></th>
-			  <th><em><%= link_to 'Log in', login_index_path %></em></th>
-			</tr>
-		  </thead>
-		</header>
-	</div>
 
-</html>
+<ul class="nav justify-content-center">
+  <li class="nav-item">
+    <%= link_to 'Home', root_path , class: "nav-link active" %>
+  </li>
+  <li class="nav-item">
+    <%= link_to 'Users', users_path , class: "nav-link active" %>
+  </li>
+  <li class="nav-item">
+    <%= link_to 'Car models', carmodels_path , class: "nav-link active" %>
+  </li>
+  <li class="nav-item">
+    <%= link_to 'Employees', employees_path , class: "nav-link active" %>
+  </li>
+  <li class="nav-item">
+    <%= link_to 'Sales', sales_path , class: "nav-link active" %>
+  </li>
+
+    	<% if logged_in? %>
+    		<li class="nav-item">
+    			<%= link_to 'Log out', logout_path , class: "nav-link disabled" %>
+    		</li>
+    		<li class="nav-item">
+ 				<div class="nav-link">Logged in as <%= current_user.try(:name) %></div>
+ 			</li>
+ 		<% else %>
+ 			<li class="nav-item">
+ 				<%= link_to 'Log in', login_path , class: "nav-link" %>
+ 			</li>
+ 			<li class="nav-item">
+ 				<%= link_to 'Create account', new_user_path , class: "nav-link" %>
+ 			</li>
+		<% end %>
+</ul>
+
+
+
