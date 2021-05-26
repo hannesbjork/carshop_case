@@ -1,24 +1,34 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Simple website for a car shop.
 
-Things you may want to cover:
+Software requirements and tested versions:
 
-* Ruby version
+* rvm 1.29.12
 
-* System dependencies
+  * Ruby 3.0.0 
 
-* Configuration
+  * Rails 6.1.3.2
+  
+* node.js 10.19.0
+  
+* npm 6.14.4
 
-* Database creation
+  * yarn 1.22.10
+  
+* postgreSQL 12.6 ubuntu
 
-* Database initialization
+Tested and working on Ubuntu 20.04
 
-* How to run the test suite
+Using postgreSQL: 
 
-* Services (job queues, cache servers, search engines, etc.)
+1. Install postgreSQL
+2. Create a database called 'carshop'
+3. Establish a user with appropriate previliges
+4. Type the password and username in 'config/database.yml'
 
-* Deployment instructions
+Run the server with 'rail s' in git root
 
-* ...
+NOTE. the log-in and restriction method is not very secure and should not be used on a real website.
+
+
