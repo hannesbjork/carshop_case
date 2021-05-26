@@ -3,11 +3,29 @@ class UsersController < ApplicationController
 
   # GET /posts or /posts.json
   def index
+  	@sold_for_total = 0
     @users = User.all
+    @users.each do |user|
+    	@sold_for = 0
+    	@sales = user.sales.all
+    	@sales.each do |sale|
+    		@carmodel = sale.carmodel
+    		@sold_for_total = @sold_for_total + @carmodel.price.to_i
+    		@sold_for = @sold_for + @carmodel.price.to_i
+    	end
+    	user.sold_for = @sold_for
+    end
+    
+    
   end
 
   # GET /posts/1 or /posts/1.json
   def show
+  	@user = User.find(params[:id])
+  	@employee = @user.employee
+  	@sales = Sale.where(employee_id: @employee)
+  	#@sales = Sale.where(employee_id: @employee)
+  	
   end
 
   # GET /posts/new

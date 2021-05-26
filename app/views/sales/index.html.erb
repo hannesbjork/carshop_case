@@ -1,28 +1,30 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+	<p id="notice"><%= notice %></p>
 
-<h1>Sales</h1>
+	<h1>Sales</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Employee id</th>
-      <th>Carmodel id</th>
-    </tr>
-  </thead>
+	<table>
+	  <thead>
+		<tr>
+		  <th>Employee id</th>
+		  <th>Carmodel id</th>
+		</tr>
+	  </thead>
 
-  <tbody>
-    <% @sales.each do |sale| %>
-      <tr>
-      	<td><%= sale.employee_id %></td>
-        <td><%= sale.carmodel_id %></td>
-        <td><%= link_to 'Show', sale %></td>
-        <td><%= link_to 'Edit', edit_sale_path(sale) %></td>
-        <td><%= link_to 'Destroy', sale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+	  <tbody>
+		<% @sales.each do |sale| %>
+		  <tr>
+		  	<td><%= sale.employee_id %></td>
+		    <td><%= sale.carmodel_id %></td>
+		    <td><%= link_to 'Show', sale %></td>
+		    <td><%= link_to 'Edit', edit_sale_path(sale) %></td>
+		    <td><%= link_to 'Destroy', sale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		  </tr>
+		<% end %>
+	  </tbody>
+	</table>
 
-<br>
+	<br>
 
-<%= link_to 'New Sale', new_sale_path %>
+	<%= link_to 'New Sale', new_sale_path %>
+</div>

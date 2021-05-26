@@ -3,7 +3,7 @@ class CreateCarmodels < ActiveRecord::Migration[6.1]
     create_table :carmodels do |t|
       t.string :brand
       t.string :model
-      t.string :price
+      t.integer :price
 
       t.timestamps
     end

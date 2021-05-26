@@ -1,31 +1,33 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+	<p id="notice"><%= notice %></p>
 
-<h1>Car models</h1>
+	<h1>Car models</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Brand</th>
-      <th>Model</th>
-      <th>Price</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+	<table>
+	  <thead>
+		<tr>
+		  <th>Brand</th>
+		  <th>Model</th>
+		  <th>Price</th>
+		  <th colspan="3"></th>
+		</tr>
+	  </thead>
 
-  <tbody>
-    <% @carmodels.each do |carmodel| %>
-      <tr>
-      	<td><%= carmodel.brand %></td>
-        <td><%= carmodel.model %></td>
-        <td><%= carmodel.price %></td>
-        <td><%= link_to 'Show', carmodel %></td>
-        <td><%= link_to 'Edit', edit_carmodel_path(carmodel) %></td>
-        <td><%= link_to 'Destroy', carmodel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+	  <tbody>
+		<% @carmodels.each do |carmodel| %>
+		  <tr>
+		  	<td><%= carmodel.brand %></td>
+		    <td><%= carmodel.model %></td>
+		    <td><%= carmodel.price %></td>
+		    <td><%= link_to 'Show', carmodel %></td>
+		    <td><%= link_to 'Edit', edit_carmodel_path(carmodel) %></td>
+		    <td><%= link_to 'Destroy', carmodel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		  </tr>
+		<% end %>
+	  </tbody>
+	</table>
 
-<br>
+	<br>
 
-<%= link_to 'New Car model', new_carmodel_path %>
+	<%= link_to 'New Car model', new_carmodel_path %>
+</div>

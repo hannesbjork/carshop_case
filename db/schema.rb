@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_25_093051) do
+ActiveRecord::Schema.define(version: 2021_05_24_123605) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,38 +18,33 @@ ActiveRecord::Schema.define(version: 2021_05_25_093051) do
   create_table "carmodels", force: :cascade do |t|
     t.string "brand"
     t.string "model"
-    t.string "price"
+    t.integer "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "employees", force: :cascade do |t|
     t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "posts", force: :cascade do |t|
-    t.string "title"
-    t.text "body"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "sales", force: :cascade do |t|
-    t.string "employee_id"
-    t.string "carmodel_id"
+    t.integer "employee_id"
+    t.integer "carmodel_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "name"
     t.string "email"
     t.string "password_digest"
-    t.string "employee_number"
+    t.integer "employee_id"
+    t.integer "sold_for"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "name"
   end
 
 end

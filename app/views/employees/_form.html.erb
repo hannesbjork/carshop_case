@@ -13,7 +13,7 @@
   
   <div class="field">
     <%= form.label :name %>
-    <%= form.select :name, User.all.collect { |x| [x.name]}, {:include_blank => "Please Select"} %>
+    <%= form.select :user_id, User.all.collect { |x| [x.name, x.id]}, {:include_blank => "Please Select"} %>
   </div>
   
   <div class="actions">

@@ -22,6 +22,8 @@ class EmployeesController < ApplicationController
   # POST /posts or /posts.json
   def create
     @employee = Employee.new(employee_params)
+    
+    @employee.name = @employee.user.name
 
     respond_to do |format|
       if @employee.save
@@ -65,6 +67,6 @@ class EmployeesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def employee_params
-      params.require(:employee).permit(:name)
+      params.require(:employee).permit(:name, :user_id)
     end
 end
