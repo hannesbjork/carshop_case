@@ -26,6 +26,10 @@ Using postgreSQL:
 2. Create a database called 'carshop'
 3. Establish a user with appropriate previliges
 4. Type the password and username in 'config/database.yml'
+5. Run 'bin/rails db:migrate' to establish tables
+6. Run 'bin/rails db:seed' to populate tables
+
+You can use a log-in seen in 'seed.db' to log into the website
 
 Run the server with 'rail s' in git root
 
